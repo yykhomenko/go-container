@@ -40,6 +40,7 @@ func child() {
 
 	must(syscall.Chroot("/home/rootfs"))
 	must(os.Chdir("/"))
+	must(syscall.Mount("proc", "proc", "proc", 0, ""))
 	must(cmd.Run())
 }
 
